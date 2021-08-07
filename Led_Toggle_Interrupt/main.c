@@ -2,7 +2,7 @@
 #include "GPIO_Driver.h"
 #include "Interrupt_Driver.h"
 
-//Example of using GPIO_Driver
+//Example of using GPIO_Driver and Interrupt_Driver
 
 /* This driver uses the GPIO_Driver and Interrupt_Driver libraries which provide definitions for
    different functions that help to intialize Tiva c  peripherals.
