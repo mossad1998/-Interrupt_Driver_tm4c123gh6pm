@@ -12,7 +12,7 @@
 
    Used pins
    ===========
-   Pin F0 as difital input
+   Pin F0 as digital input
    Pin F1 as digital output
 
    History
