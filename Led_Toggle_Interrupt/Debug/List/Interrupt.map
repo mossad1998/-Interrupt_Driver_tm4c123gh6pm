@@ -1,0 +1,264 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.1.245/W32 for ARM                  07/Aug/2021  23:10:07
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\Exe\Interrupt.out
+#    Map file     =
+#        G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\List\Interrupt.map
+#    Command line =
+#        -f C:\Users\Owner\AppData\Local\Temp\EW7B41.tmp
+#        (G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\Obj\GPIO_Driver.o
+#        G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\Obj\Interrupt_Driver.o
+#        G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\Obj\main.o
+#        G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\Obj\startup_ewarm.o
+#        --no_out_extension -o
+#        G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\Exe\Interrupt.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\List\Interrupt.map
+#        --config G:\IAR\arm\config\linker\TexasInstruments\TM4C123GH6.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+do not initialize { rw section .noinit };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                      0x26c
+  .intvec            const            0x0  0x26c  startup_ewarm.o [1]
+                                  - 0x26c  0x26c
+
+"P1":                                      0x948
+  .text              ro code        0x26c  0x344  GPIO_Driver.o [1]
+  .text              ro code        0x5b0   0x12  strcmp.o [3]
+  .text              ro code        0x5c2   0x2e  copy_init3.o [3]
+  .text              ro code        0x5f0  0x202  Interrupt_Driver.o [1]
+  Initializer bytes  const          0x7f4  0x124  <for P2-1>
+  .text              ro code        0x918  0x104  main.o [1]
+  .text              ro code        0xa1c   0x28  data_init.o [3]
+  .iar.init_table    const          0xa44   0x14  - Linker created -
+  .text              ro code        0xa58   0x1e  startup_ewarm.o [1]
+  .text              ro code        0xa76    0xc  cstartup_M.o [3]
+  .text              ro code        0xa84   0x1e  cmain.o [3]
+  .text              ro code        0xaa2    0x4  low_level_init.o [2]
+  .text              ro code        0xaa6    0x4  exit.o [2]
+  .text              ro code        0xaac    0xa  cexit.o [3]
+  .text              ro code        0xab8   0x14  exit.o [4]
+  .rodata            const          0xacc   0x10  Interrupt_Driver.o [1]
+  .rodata            const          0xadc   0x10  Interrupt_Driver.o [1]
+  .rodata            const          0xaec   0x10  main.o [1]
+  .rodata            const          0xafc    0xc  GPIO_Driver.o [1]
+  .rodata            const          0xb08    0xc  GPIO_Driver.o [1]
+  .rodata            const          0xb14    0xc  GPIO_Driver.o [1]
+  .rodata            const          0xb20    0xc  main.o [1]
+  .rodata            const          0xb2c    0x8  GPIO_Driver.o [1]
+  .rodata            const          0xb34    0x8  GPIO_Driver.o [1]
+  .rodata            const          0xb3c    0x8  GPIO_Driver.o [1]
+  .rodata            const          0xb44    0x8  GPIO_Driver.o [1]
+  .rodata            const          0xb4c    0x8  GPIO_Driver.o [1]
+  .rodata            const          0xb54    0x8  GPIO_Driver.o [1]
+  .rodata            const          0xb5c    0x8  Interrupt_Driver.o [1]
+  .rodata            const          0xb64    0x8  Interrupt_Driver.o [1]
+  .rodata            const          0xb6c    0x8  Interrupt_Driver.o [1]
+  .rodata            const          0xb74    0x8  Interrupt_Driver.o [1]
+  .rodata            const          0xb7c    0x8  main.o [1]
+  .rodata            const          0xb84    0x8  main.o [1]
+  .rodata            const          0xb8c    0x8  main.o [1]
+  .rodata            const          0xb94    0x8  main.o [1]
+  .rodata            const          0xb9c    0x8  main.o [1]
+  .rodata            const          0xba4    0x8  main.o [1]
+  .rodata            const          0xbac    0x8  main.o [1]
+  .rodata            const          0xbb4    0x0  copy_init3.o [3]
+                                  - 0xbb4  0x948
+
+"P2", part 1 of 2:                         0x124
+  P2-1                        0x2000'0000  0x121  <Init block>
+    .data            inited   0x2000'0000   0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0018   0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0030   0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0048   0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0060   0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0078   0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'0090   0x18  GPIO_Driver.o [1]
+    .data            inited   0x2000'00a8   0x18  Interrupt_Driver.o [1]
+    .data            inited   0x2000'00c0   0x18  Interrupt_Driver.o [1]
+    .data            inited   0x2000'00d8   0x18  Interrupt_Driver.o [1]
+    .data            inited   0x2000'00f0   0x18  Interrupt_Driver.o [1]
+    .data            inited   0x2000'0108   0x18  Interrupt_Driver.o [1]
+    .data            inited   0x2000'0120    0x1  main.o [1]
+                            - 0x2000'0121  0x121
+
+"P2", part 2 of 2:                         0x100
+  .noinit            uninit   0x2000'0124  0x100  startup_ewarm.o [1]
+                            - 0x2000'0224  0x100
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0xbb4     0x3'ffff  0x3'f44c
+  0x2000'0224  0x2000'7fff    0x7ddc
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x124 (101% of destination):
+                0x7f4  0x124
+    1 destination range, total size 0x121:
+          0x2000'0000  0x121
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\Obj: [1]
+    GPIO_Driver.o           836      252      168
+    Interrupt_Driver.o      514      184      120
+    main.o                  260       85        1
+    startup_ewarm.o          30      620      256
+    ---------------------------------------------
+    Total:                1'640    1'141      545
+
+dl7M_tln.a: [2]
+    exit.o                    4
+    low_level_init.o          4
+    ---------------------------------------------
+    Total:                    8
+
+rt7M_tl.a: [3]
+    cexit.o                  10
+    cmain.o                  30
+    copy_init3.o             46
+    cstartup_M.o             12
+    data_init.o              40
+    strcmp.o                 18
+    ---------------------------------------------
+    Total:                  156
+
+shb_l.a: [4]
+    exit.o                   20
+    ---------------------------------------------
+    Total:                   20
+
+    Gaps                      6
+    Linker created                    25
+-------------------------------------------------
+    Grand Total:          1'830    1'166      545
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0xa44          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xa58          --   Gb  - Linker created -
+?main                         0xa85         Code  Gb  cmain.o [3]
+AFSEL_R                 0x2000'0048   0x18  Data  Gb  GPIO_Driver.o [1]
+AMSEL_R                 0x2000'0018   0x18  Data  Gb  GPIO_Driver.o [1]
+CLK_Enable                    0x26d   0x24  Code  Gb  GPIO_Driver.o [1]
+CLK_PORTS               0x2000'0000   0x18  Data  Gb  GPIO_Driver.o [1]
+DATA_R                  0x2000'0090   0x18  Data  Gb  GPIO_Driver.o [1]
+DEN_R                   0x2000'0030   0x18  Data  Gb  GPIO_Driver.o [1]
+DIR_R                   0x2000'0060   0x18  Data  Gb  GPIO_Driver.o [1]
+FaultISR                      0xa73    0x2  Code  Lc  startup_ewarm.o [1]
+GPIOF_Handler                 0x9b7   0x32  Code  Gb  main.o [1]
+GPIOF_Handler::flag     0x2000'0120    0x1  Data  Lc  main.o [1]
+GPIO_PORT_UNLOCK              0x291   0x3a  Code  Gb  GPIO_Driver.o [1]
+IntDefaultHandler             0xa75    0x2  Code  Lc  startup_ewarm.o [1]
+Interrupt_Enable              0x7e5    0xe  Code  Gb  Interrupt_Driver.o [1]
+Interrupt_Priority            0x7dd    0x8  Code  Gb  Interrupt_Driver.o [1]
+NmiSR                         0xa71    0x2  Code  Lc  startup_ewarm.o [1]
+PIN_ANALOG_DIGITAL            0x2cb   0xc6  Code  Gb  GPIO_Driver.o [1]
+PIN_Both_Edge_Trigger         0x667   0x76  Code  Gb  Interrupt_Driver.o [1]
+PIN_Clear_Interrupt           0x753   0x2e  Code  Gb  Interrupt_Driver.o [1]
+PIN_Edge_Level_Trigger        0x5f1   0x76  Code  Gb  Interrupt_Driver.o [1]
+PIN_FUNCTION_SELECT           0x391   0x76  Code  Gb  GPIO_Driver.o [1]
+PIN_INPUT_OUTPUT              0x407   0x76  Code  Gb  GPIO_Driver.o [1]
+PIN_PULLUP_RESISTOR           0x47d   0x76  Code  Gb  GPIO_Driver.o [1]
+PIN_Rising_Falling_Trigger
+                              0x6dd   0x76  Code  Gb  Interrupt_Driver.o [1]
+PIN_Unmask                    0x781   0x2e  Code  Gb  Interrupt_Driver.o [1]
+PIN_WRITE_DIGITAL             0x4f3   0x68  Code  Gb  GPIO_Driver.o [1]
+PORT_IBE_R              0x2000'00c0   0x18  Data  Gb  Interrupt_Driver.o [1]
+PORT_ICR_R              0x2000'00f0   0x18  Data  Gb  Interrupt_Driver.o [1]
+PORT_IEV_R              0x2000'00d8   0x18  Data  Gb  Interrupt_Driver.o [1]
+PORT_IM_R               0x2000'0108   0x18  Data  Gb  Interrupt_Driver.o [1]
+PORT_IS_R               0x2000'00a8   0x18  Data  Gb  Interrupt_Driver.o [1]
+PUR_R                   0x2000'0078   0x18  Data  Gb  GPIO_Driver.o [1]
+Region$$Table$$Base           0xa44          --   Gb  - Linker created -
+Region$$Table$$Limit          0xa58          --   Gb  - Linker created -
+ResetISR                      0xa59   0x12  Code  Gb  startup_ewarm.o [1]
+__cmain                       0xa85         Code  Gb  cmain.o [3]
+__exit                        0xab9   0x14  Code  Gb  exit.o [4]
+__iar_copy_init3              0x5c3   0x2e  Code  Gb  copy_init3.o [3]
+__iar_data_init3              0xa1d   0x28  Code  Gb  data_init.o [3]
+__iar_program_start           0xa77         Code  Gb  cstartup_M.o [3]
+__low_level_init              0xaa3    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0  0x26c  Data  Gb  startup_ewarm.o [1]
+_call_main                    0xa91         Code  Gb  cmain.o [3]
+_exit                         0xaad         Code  Gb  cexit.o [3]
+_main                         0xa9f         Code  Gb  cmain.o [3]
+exit                          0xaa7    0x4  Code  Gb  exit.o [2]
+main                          0x919   0x9e  Code  Gb  main.o [1]
+pui32Stack              0x2000'0124  0x100  Data  Lc  startup_ewarm.o [1]
+strcmp                        0x5b1         Code  Gb  strcmp.o [3]
+
+
+[1] = G:\Github\Interrupt_Driver_tm4c123gh6pm\Led_Toggle_Interrupt\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  1'830 bytes of readonly  code memory
+  1'166 bytes of readonly  data memory
+    545 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
